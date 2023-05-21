@@ -1,0 +1,18 @@
+name: image builds
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  teensy:
+    uses: ./.github/workflows/docker-build.yml
+    with:
+      name: "teensy"
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  elfbin:
+    uses: ./.github/workflows/docker-build.yml
+    with:
+      name: "elfbin"
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
