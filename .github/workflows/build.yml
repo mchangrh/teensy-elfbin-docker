@@ -16,3 +16,9 @@ jobs:
       name: "elfbin"
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  hand-elf:
+    uses: ./.github/workflows/docker-build.yml
+    with:
+      name: "hand-elf"
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
